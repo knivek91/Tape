@@ -1,7 +1,7 @@
-var tape = require('tape');
-var tapSpec = require('tap-spec');
-var testFile = require('./index.js');
-var Test = testFile();
+var tape 		= require('tape');
+var tapSpec 	= require('tap-spec');
+var testFile 	= require('./index.js');
+var Test 		= testFile();
 
 tape.createStream()
   .pipe(tapSpec())
@@ -17,15 +17,6 @@ tape.test('Equal Age', function(t) {
 
 });
 
-tape.test('Equal Age String', function(t) {
-
-	t.equal(Test.getAgeStr(), 24, 'equal equal');
-	t.deepEqual(Test.getAgeStr(), '24', '=== equal');
-	t.deepLooseEqual(Test.getAgeStr(), 24, '== equal');
-	t.end();
-
-});
-
 tape.test('Equal Name', function(t) {
 
 	t.equal(Test.getName(), 'kevin', 'equal');
@@ -34,3 +25,13 @@ tape.test('Equal Name', function(t) {
 	t.end();
 
 });
+
+tape.test('Promise Test', function(t) {
+
+	Test.getPromise().then(function(resp) {
+		t.equal(resp, 'Resolve', 'equal');
+	});
+	t.end();
+
+});
+

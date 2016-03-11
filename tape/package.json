@@ -9,6 +9,7 @@
   "author": "knivek91",
   "license": "MIT",
   "devDependencies": {
+    "promise": "^7.1.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   }
