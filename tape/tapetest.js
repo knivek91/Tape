@@ -26,6 +26,7 @@ tape.test('Equal Name', function(t) {
 
 });
 
+/* Sin uso de blue - tape gracias a @sergiodxa su pagina personal sergio.xalambri.com.ar */
 tape.test('Promise Test', function(t) {
 
 	Test.getPromise().then(function(resp) {
